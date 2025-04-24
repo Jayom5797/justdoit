@@ -7,20 +7,29 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background-color: white;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
-    <script>
-        // List of files to download
-        const files = [
-     
-            'post.docx'
-            'post1.docx'
-            'post2.docx'
-        ];
+</head>
+<body>
+    <h1>OS Algorithms Files</h1>
+    <p>Click the button below to download all files:</p>
+    <button onclick="startDownload()">Download Files</button>
 
-        // Function to trigger download
+    <script>
+        const files = ['post.docx', 'post1.docx', 'post2.docx'];
+
         function downloadFile(filename) {
             const link = document.createElement('a');
             link.href = filename;
@@ -30,14 +39,9 @@
             document.body.removeChild(link);
         }
 
-        // Download all files when page loads
-        window.onload = function() {
-            files.forEach(file => {
-                downloadFile(file);
-            });
-        };
+        function startDownload() {
+            files.forEach(file => downloadFile(file));
+        }
     </script>
-</head>
-<body>
 </body>
-</html> 
+</html>
